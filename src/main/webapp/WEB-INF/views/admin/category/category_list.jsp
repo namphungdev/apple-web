@@ -33,7 +33,7 @@ td {
     <tr class="table-dark" >
       <th>Id</th>
       <th>Name</th>
-      <th>Description</th>
+       <th>Description</th>
     
     
       <th>Edit</th>
@@ -48,6 +48,7 @@ td {
          
           <td> <a href="${urlUpdate}/${category.id}">Edit</a></td>
           <td> <a href="${urlDelete}/${category.id}">Delete</a></td>
+        </tr>
         </tr>
       </c:forEach>
     </c:if>

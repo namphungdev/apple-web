@@ -12,21 +12,22 @@
         <div class="page-wrapper">
            
             <div class="container-fluid">
-			<a href="<c:url value="/home_admin/category_list" />">Danh sách loại sản phẩm</a> <br />
-			<h1>Chỉnh sửa loại sản phẩm:</h1>
-			<c:url value="/home_admin/updateCategory" var="updateCategory" />
-			<form:form action="${updateCategory}" method="POST"
-				modelAttribute="category">
+            <h1>Chỉnh sửa dung lượng:</h1>
+			<button type="button" class="btn btn-primary"><a style="color: #fff" href="<c:url value="/home_admin/capacity_list" />">Danh sách dung lượng</a></button>
+			</br>
+			</br>
+			
+			<c:url value="/home_admin/updateCapacity" var="updateCapacity" />
+			<form:form action="${updateCapacity}" method="POST"
+				modelAttribute="capacity">
 	Id: <form:input path="id" readonly="true" />
 				<br />
 				<br />
-   	 Tên loại sản phẩm: <form:input type="text" path="name" name="name" />
+   	 Dung lượng: <form:input type="number" path="name_capacity" name="name" /> GB
 				</br>
-       Mô tả: <form:input type="text" path="description" name="name" />
-				<br />
-				<br />
+       
 
-				<button type="submit">Submit</button>
+				<button type="submit">Xác nhận</button>
 			</form:form>
 
 		</div>

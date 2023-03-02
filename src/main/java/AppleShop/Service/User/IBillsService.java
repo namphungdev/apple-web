@@ -16,5 +16,7 @@ public interface IBillsService {
 	public List<Bills> findAll();
 	public List<Bills> GetBillByAcc(Bills bill);
 	public List<BillDetail> findById(int id);
+	public Bills findBillById(int id);
+	public void update(Bills bill);
 	
 }

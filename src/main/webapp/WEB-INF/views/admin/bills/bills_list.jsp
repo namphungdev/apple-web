@@ -5,7 +5,7 @@
 	pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Kích thước màn hình</title>
+<title>Đơn hàng</title>
 <style>
 table, th, td {
   border: 1px solid black;
@@ -21,36 +21,44 @@ td {
         <div class="page-wrapper">
            
             <div class="container-fluid">
-			<c:url value="/home_admin/capacity_save" var="urlSave" />
-			<c:url value="/home_admin/capacity_update" var="urlUpdate" />
-			<c:url value="/home_admin/capacityDelete" var="urlDelete" />
-			<h1>Danh sách dung lượng:</h1>
-  <button type="button" class="btn btn-primary"><a style="color: #fff" href="${urlSave}">Thêm loại dung lượng</a></button>
+			<c:url value="/home_admin/category_save" var="urlSave" />
+			<c:url value="/home_admin/bills_update" var="urlUpdate" />
+			<c:url value="/home_admin/categoryDelete" var="urlDelete" />
+			<h1>Danh sách đơn hàng:</h1>
   
   <br />
   <br />
   <table class="table">
     <tr class="table-dark" >
-      <th>Id</th>
-      <th>Name</th>
-      
+      <th>Id đơn hàng</th>
+      <th>Tên</th>
+      <th>Tổng tiền</th>
+      <th>Địa chỉ</th>
+      <th>Ngày mua</th>
+      <th>Trang thái</th>
+      <th>Vận chuyển</th>
     
     
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <c:if test="${not empty listCapacity}">
-      <c:forEach var="capacity" items="${listCapacity}">
+    
+      <c:forEach var="listBill" items="${listBill}">
         <tr style="border: 1px black solid">
-          <td>${capacity.id}</td>
-          <td>${capacity.name_capacity} GB</td>
-         
-         
-          <td> <a href="${urlUpdate}/${capacity.id}">Edit</a></td>
-          <td> <a href="${urlDelete}/${capacity.id}">Delete</a></td>
+          <td>#${listBill.id}</td>
+          <td>${listBill.display_name}</td>
+          <td><fmt:formatNumber type="number" groupingUsed="true" value="${listBill.total}" /> ₫</td>
+          <td>${listBill.address}</td>
+          <td>${listBill.ngaymua}</td>
+          <td>${(listBill.trangthai == 0) ? "Đang chờ xử lý" : "Đã hoàn tất" }</td>
+           <td>${(listBill.vanchuyen == 0) ? "Chưa giao hàng" : "Đã giao hàng" }</td>
+  
+          <td> <a href="${urlUpdate}/${listBill.id}">Edit</a></td>
+          <td> <a href="${urlDelete}/${listBill.id}">Delete</a></td>
         </tr>
       </c:forEach>
-    </c:if>
+     <%--  <c:if test="${not empty listBill}">
+    </c:if> --%>
   </table>
                            
             </div>

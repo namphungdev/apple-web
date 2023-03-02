@@ -15,6 +15,7 @@ import AppleShop.Entity.CustomerMapper;
 import AppleShop.Entity.MapperBillDetail;
 import AppleShop.Entity.MapperBills;
 import AppleShop.Entity.MapperUsers;
+import AppleShop.Entity.Size;
 import AppleShop.Entity.Users;
 @Repository
 public class BillsDao extends BaseDao {
@@ -31,9 +32,9 @@ public class BillsDao extends BaseDao {
 		sql.append("    total, ");
 		sql.append("    quanty, ");
 		sql.append("    note, ");
-		sql.append("    NgayMua, ");
-		sql.append("    TrangThai, ");
-		sql.append("    VanChuyen ");
+		sql.append("    ngaymua, ");
+		sql.append("    trangthai, ");
+		sql.append("    vanchuyen ");
 		sql.append(") ");
 		sql.append("VALUES ");
 		sql.append("( ");
@@ -44,9 +45,9 @@ public class BillsDao extends BaseDao {
 		sql.append("    '"+bill.getTotal()+"', ");
 		sql.append("    '"+bill.getQuanty()+"', ");
 		sql.append("    '"+bill.getNote()+"', ");
-		sql.append("    '"+bill.getNgayMua()+"', ");
-		sql.append("    '"+bill.getTrangThai()+"', ");
-		sql.append("    '"+bill.getVanChuyen()+"' ");
+		sql.append("    '"+bill.getNgaymua()+"', ");
+		sql.append("    '"+bill.getTrangthai()+"', ");
+		sql.append("    '"+bill.getVanchuyen()+"' ");
 		sql.append(")");
 		int insert = _jdbcTemplate.update(sql.toString());
 		return insert;
@@ -127,6 +128,14 @@ public class BillsDao extends BaseDao {
 		    		+ "WHERE id_bills =" + id + " ").toString();
 		    List<BillDetail> listBillDetail = jdbcTemplate.query(sql, new MapperBillDetail());
 		    return listBillDetail;
+		  }
+	 public Bills findBillById(int id) {
+			String sql = "SELECT * FROM bills WHERE id = ?";
+			return jdbcTemplate.queryForObject(sql, new MapperBills(), id);
+		}
+	 public void update(Bills bill) {
+		    String sql = "UPDATE bills SET trangthai = ?, vanchuyen = ?  WHERE id = ?  ";
+		    jdbcTemplate.update(sql, bill.getTrangthai(), bill.getVanchuyen(),bill.getId());
 		  }
 
 }

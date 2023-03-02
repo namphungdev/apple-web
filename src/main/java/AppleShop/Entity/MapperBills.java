@@ -15,10 +15,11 @@ public class MapperBills implements RowMapper<Bills> {
 		bill.setDisplay_name(rs.getString("display_name"));
 		bill.setAddress(rs.getString("address"));
 		bill.setTotal(rs.getDouble("total"));
-		bill.setQuanty(rs.getInt("quanty"));		
-		bill.setNgayMua(rs.getString("NgayMua"));
-		bill.setTrangThai(rs.getString("TrangThai"));
-		bill.setVanChuyen(rs.getString("VanChuyen"));
+		bill.setQuanty(rs.getInt("quanty"));
+		bill.setNote(rs.getString("note"));	
+		bill.setNgaymua(rs.getString("ngaymua"));
+		bill.setTrangthai(rs.getInt("trangthai"));
+		bill.setVanchuyen(rs.getInt("vanchuyen"));
 		return bill;
 	}
 }

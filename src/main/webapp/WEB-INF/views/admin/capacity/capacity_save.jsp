@@ -14,12 +14,11 @@
             <div class="container-fluid">
 			<a href="<c:url value="/home_admin/category_list" />">Danh sách loại sản phẩm</a><br />
 			<h1>Thêm loại sản phẩm:</h1>
-			<c:url value="/home_admin/saveCategory" var="saveCategory" />
-			<form:form action="${saveCategory}" method="POST"
-				modelAttribute="category">				
-      Tên loại sản phẩm: <form:input  type="text" path="name" name="name" /> </br>
-       Mô tả: <form:input  type="text" path="description" name="name" />
-      			
+			<c:url value="/home_admin/saveCapacity" var="saveCapacity" />
+			<form:form action="${saveCapacity}" method="POST"
+				modelAttribute="capacity">		
+	 		
+      Dung lượng: <form:input  type="text" path="name_capacity" name="name" /> </br>			
 				<br />
 				<br />
 				<button type="submit">Submit</button>

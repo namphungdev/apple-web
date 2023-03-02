@@ -4,19 +4,18 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import AppleShop.Entity.Capacitys;
-import AppleShop.Entity.Categorys;
 import AppleShop.Entity.MapperCapacitys;
-import AppleShop.Entity.MapperCategorys;
-
-public class CapacityDao {
+@Repository
+public class CapacityDao extends BaseDao{
 
 	@Autowired
 	  private JdbcTemplate jdbcTemplate;
 	
 	  public void save(Capacitys capacity) {
-	    String sql = "INSERT INTO capacity (name_capacity()) VALUES (?)";
+	    String sql = "INSERT INTO capacity (name_capacity) VALUES (?)";
 	    jdbcTemplate.update(sql, capacity.getName_capacity());
 	  }
 	  public void delete(int id) {

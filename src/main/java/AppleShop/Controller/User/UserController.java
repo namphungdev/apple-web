@@ -95,15 +95,8 @@ public class UserController extends BaseController{
 		 _mvShare.setViewName("user/account/billdetail");	
 		 List<BillDetail> billdetail = _billsServiceImpl.findById(Integer.parseInt(id));
 	    _mvShare.addObject("billdetail", billdetail);
-//	    _mvShare.addObject("products", _productServiceImpl.GetProductByID(Integer.parseInt(id)));
-//	    int idProduct = billdetail.get(id.toString());
-//	    int Product = (int) _productService.GetProductByID(Integer.parseInt(id)).getId(billdetail.get(Integer.parseInt(id_product)));
-//	    _mvShare.addObject("product", Product);
-//	    
-//	    _mvShare.addObject("products", _productServiceImpl.GetProductByID());	
-//	    
-//	    int idCategory = _productService.GetProductByID(id).getId_category();
-//		_mvShare.addObject("productByIDCategory", _productService.GetProductByCategory(idCategory));
+	    _mvShare.addObject("bill", _billsServiceImpl.findBillById(Integer.parseInt(id)));
+
 	    return _mvShare;
 	  }
 //	 @RequestMapping(value = "/san-pham/{id}")

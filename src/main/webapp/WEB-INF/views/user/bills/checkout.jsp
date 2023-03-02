@@ -55,9 +55,9 @@
 								<label class="control-label">Ghi chú <sup>*</sup></label>
 								<div class="controls">
 									 <form:textarea   row="5" cols="30"  path="note" /> <br>
-									 <form:input  id ="day-now" type="text"  path="NgayMua"  /><br>
-									 <form:input   type="text" value="Đang chờ xử lý"  path="TrangThai"  /><br>
-									 <form:input   type="text"  value="Đang vận chuyển" path="VanChuyen"  />
+									 <form:input  id ="day-now" type="hidden"  path="ngaymua"  /><br>
+									 <form:input    type="hidden" value="0"  path="trangthai"  /><br>
+									 <form:input   type="hidden"  value="0" path="vanchuyen"  />
 									 
 								</div>
 								

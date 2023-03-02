@@ -16,18 +16,18 @@
 	</div>
 	<hr/>
 <div class="col-xs-12" id="customer_sidebar">
-						<h2 class="title-detail">Thông tin tài khoản</h2>
+						<h3 class="title-detail">Thông tin tài khoản</h3>
 						
 						<h4 class="name_account">${LoginInfo.display_name}</h4>
 						
 
-						<p class="email ">${LoginInfo.username}</p>
+						<h5><p class="email ">${LoginInfo.username}</p>
 						<div class="address ">													
 							<p> ${LoginInfo.address}</p>							
 							
 							
-						</div>
-					</div>
+						</div></h5>
+					</div><hr/>
 	<div class="col-xs-12 customer-table-wrap" id="customer_orders">	
 						<div class="customer_order customer-table-bg">		
 							
@@ -50,28 +50,14 @@
 							<c:forEach var="bill" items="${bills}">
 							<tr class="even cancelled_order">
 											<td class="text-center"><a href="<c:url value="/billdetail/${ bill.id }"/>" title="">#${bill.id}</a></td>
-											<td class="text-center"><span>30/12/2021</span></td>
+											<td class="text-center"><span>${bill.ngaymua}</span></td>
 											<td class="text-right"><span class="total money"><fmt:formatNumber type="number" groupingUsed="true" value="${bill.total}" /> ₫</span></td>
-																						<td class="text-center"><span class="status_pending">Đang chờ xử lý</span></td>
+																						<td class="text-center"><span class="status_pending">${(bill.trangthai == 0) ? "Đang chờ xử lý" : "Đã hoàn tất" }</span></td>
 											
-																						<td class="text-center"><span class="status_not fulfilled">Chưa giao hàng</span></td>
+																						<td class="text-center"><span class="status_not fulfilled">${(bill.vanchuyen == 0) ? "Chưa giao hàng" : "Đã giao hàng" }</span></td>
 											
 										</tr>
-								<%-- <tr style="border: 1px black solid">
-									<td>${product.id}</td>
-									<td><img src="<c:url value="${ product.img_product }"/> "
-										alt="" style="width: 50%"></td>
-									<td>${product.name_product}</td>
-									<td><fmt:formatNumber type="number" groupingUsed="true"
-											value="${product.price}" />₫</td>
-									<td>${product.size}Ich</td>
-									<td>${product.name_capacity}GB</td>
-									<td><div
-											style=" width: 20px;   height: 20px; border: 1px solid black; background: ${product.code_color};"></div></td>
-									<td><a href="${urlView}/${product.id}">View</a></td>
-									<td><a href="${urlUpdate}/${product.id}">Edit</a></td>
-									<td><a href="${urlDelete}/${product.id}">Delete</a></td>
-								</tr> --%>
+								
 							</c:forEach>
 						</c:if>
 															

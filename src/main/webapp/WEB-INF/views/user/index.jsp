@@ -88,7 +88,7 @@ Body Section
 											<div class="thumbnail">
 												<a class="zoomTool" href="chi-tiet-san-pham/${ item.id }"
 													title="add to cart"><span class="icon-search"></span>
-													QUICK VIEW</a> <a href="chi-tiet-san-pham/${ item.id }"><img
+													Xem chi tiết</a> <a href="chi-tiet-san-pham/${ item.id }"><img
 													src="<c:url value="${ item.img_product }"/>"
 													alt=""></a>
 											</div>
@@ -114,22 +114,18 @@ Body Section
 
 		<!--Featured Products-->
 		<div class="well well-small">
-			<h3>
-				<a class="btn btn-mini pull-right" href="products.html"
-					title="View more">VIew More<span class="icon-plus"></span></a> Sản
-				phẩm nổi bật
-			</h3>
+			<h3>Sản phẩm nổi bật</h3>
 			<hr class="soften" />
 			<div class="row-fluid">
 				<c:if test="${ products.size() > 0 }">
-					<ul class="thumbnails">
+					<ul class="thumbnails" >
 
 						<c:forEach var="item" items="${ products }" varStatus="loop">
-							<li class="span4">
-								<div class="thumbnail">
-									<a class="zoomTool" href="chi-tiet-san-pham/${ item.id }" title="add to cart"> QUICK VIEW</a> 
+							<li class="span4" ">
+								<div class="thumbnail" >
+									<a class="zoomTool" href="chi-tiet-san-pham/${ item.id }" title="add to cart"> Xem chi tiết</a> 
 										<a href="chi-tiet-san-pham/${ item.id }">
-										<img src="<c:url value="${ item.img_product }"/>" alt=""></a>
+										<img style="object-fit: cover; width: 200px; height:148px; " src="<c:url value="${ item.img_product }"/>" alt=""></a>
 									<div class="caption">
 										<h5>${ item.name_product }</h5>
 										<h5><span class=""><fmt:formatNumber
@@ -163,10 +159,10 @@ Body Section
 			</div>
 		</div>
 		<hr>
-		<div class="well well-small">
+		<!-- <div class="well well-small">
 			<a class="btn btn-mini pull-right" href="#">xem thêm <span
 				class="icon-plus"></span></a> tất cả sản phẩm
-		</div>
+		</div> -->
 
 	</div>
 	</div>

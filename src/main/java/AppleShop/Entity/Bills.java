@@ -2,6 +2,8 @@ package AppleShop.Entity;
 
 public class Bills {
 	
+	
+
 	private long id;
 	private String username;
 	private String phone;
@@ -10,9 +12,9 @@ public class Bills {
 	private double total;
 	private int quanty;
 	private String note;
-	private String NgayMua;
-	private String TrangThai;
-	private String VanChuyen;
+	private String ngaymua;
+	private int trangthai;
+	private int vanchuyen;
 
 
 
@@ -84,27 +86,30 @@ public class Bills {
 			this.note = note;
 		}
 		
-		public String getNgayMua() {
-			return NgayMua;
+		public String getNgaymua() {
+			return ngaymua;
 		}
 
-		public void setNgayMua(String NgayMua) {
-			this.NgayMua = NgayMua;
-		}
-		public String getTrangThai() {
-			return TrangThai;
+		public void setNgaymua(String ngaymua) {
+			this.ngaymua = ngaymua;
 		}
 
-		public void setTrangThai(String TrangThai) {
-			this.TrangThai = TrangThai;
-		}
-		public String getVanChuyen() {
-			return VanChuyen;
+		public int getTrangthai() {
+			return trangthai;
 		}
 
-		public void setVanChuyen(String VanChuyen) {
-			this.VanChuyen = VanChuyen;
+		public void setTrangthai(int trangthai) {
+			this.trangthai = trangthai;
 		}
+
+		public int getVanchuyen() {
+			return vanchuyen;
+		}
+
+		public void setVanchuyen(int vanchuyen) {
+			this.vanchuyen = vanchuyen;
+		}
+	
 
 		
 }

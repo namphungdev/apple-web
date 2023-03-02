@@ -11,21 +11,21 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-		<div class="col-xs-12" id="customer_sidebar">
-						<h2 class="title-detail">Thông tin hóa đơn</h2>
-						<%-- <p class="">${id}</p> 
-						<c:forEach  var="billdetail" items="${billdetail}">
-						<p class="">${id}</p> 
-						</c:forEach > --%>
+		<div class="title-infor-account text-center">
+		<h1>Chi tiết đơn hàng</h1>
+								
+	</div>
+	<hr/>
+		<div class="customer-table-bg">													
+							<h4 class="name_account">Đơn hàng: #${bill.id}, Đặt ngày - ${bill.ngaymua}</h4>
 						
-					</div>
-		<div class="customer-table-bg">						
-							<p class="title-detail">Chi tiết đơn hàng	</p>
+						<h5><p>Tình trạng thanh toán: ${(bill.trangthai == 0) ? "Đang chờ xử lý" : "Đã hoàn tất" }</p></h5>
+						<h5><p>Vận chuyển:  ${(bill.vanchuyen == 0) ? "Chưa giao hàng" : "Đã giao hàng" }</p></h5>
+						<a href="/AppleShop/account">Quay lại trang tài khoản</a>
 							<div class="table-responsive">
 								<table id="order_details" class="table tableOrder" >
 									<tr height="40px">
-										<th class="">ID</th>
+										<!-- <th class="">ID</th> -->
 										<th class="">Ảnh</th>
 										<th class="">Sản phẩm</th>
 										<th class="text-center">Mã sản phẩm</th>
@@ -35,7 +35,7 @@
 									</tr>
 									<c:forEach var="billdetail" items="${billdetail}">
 										<tr height="40px" id="" class="odd">
-										<td class="">${billdetail.id_bills }</td>
+										<%-- <td class="">${billdetail.id_bills }</td> --%>
 										<td class="order-image">										 
 												 <img style="max-width:130px" src="<c:url value="${billdetail.img_product}"/>" alt=""> 							
 										</td>					
@@ -62,18 +62,22 @@
 									
 									<tr height="40px" class="order_summary line_order">
 										<td class="text-right" colspan="5"><b>Giá sản phẩm</b></td>
-										<td class="total money text-right"><b>257,000₫</b></td>
+										<td class="total money text-right"><b><fmt:formatNumber
+											type="number" groupingUsed="true" value="${bill.total}" />
+											₫</b></td>
 									</tr>   
 									
 									<tr height="40px" class="order_summary ">
 										<td class="text-right" colspan="5"><b>Giao hàng tận nơi</b></td>
-										<td class="total money text-right"><b>35,000₫</b></td>
+										<td class="total money text-right"><b>50,000₫</b></td>
 									</tr>
 									
 									    
 									<tr  height="40px"class="order_summary order_total">
 										<td class="text-right" colspan="5"><b>Tổng tiền</b></td>
-										<td class="total money text-right"><b>292,000₫ </b></td>
+										<td class="total money text-right"><b><fmt:formatNumber
+											type="number" groupingUsed="true" value="${bill.total + 50000}" />
+											₫</b></td>
 									</tr>    
 								</table>
 							</div>

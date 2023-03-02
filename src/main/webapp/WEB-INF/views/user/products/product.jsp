@@ -68,9 +68,7 @@ Body Section
 								<label class="control-label"><span><fmt:formatNumber
 											type="number" groupingUsed="true" value="${ product.price }" />
 										₫</span></label>
-								<div class="controls">
-									<input type="number" min="1" value="1" class="span6">
-								</div>
+								
 							</div>
 
 							<div class="control-group">
@@ -85,13 +83,12 @@ Body Section
 								</div>-->
 							</div>
 							<div class="control-group">
-								<label class="control-label"><span>Dung lượng: ${ product.name_capacity }GB</span></label>
-							</div>
+								<label class="control-label"><span>Dung lượng:${ product.name_capacity }GB</span></label>
+							</div><hr class="soft" />
 							
 							
 							<h4></h4>
-							<p>${ product.title }
-							<p>
+							<div style="border: 2px solid #ddd;"><p>${ product.title }</div></p>
 								<button type="submit" class="shopBtn">
 									<span class=" icon-shopping-cart"></span> Thêm vào giỏ hàng
 								</button>
@@ -108,93 +105,50 @@ Body Section
 				</ul>
 				<div id="myTabContent" class="tab-content tabWrapper">
 					<div class="tab-pane fade active in " id="home">
-						<!-- <h4>Product Information</h4> -->
-						${ product.details }
-						<%-- <table class="table table-striped">
+						 <h4>Thông số kỹ thuật</h4> 
+						<%-- ${ product.details } --%>
+						 <table class="table table-striped" style="border-collapse: collapse; width: 100%;" >
 							<tbody>
 								<tr class="techSpecRow">
-									<td class="techSpecTD1">Color:</td>
-									<td class="techSpecTD2">${ products.name_color }</td>
+									<td class="techSpecTD1">Màn hình</td>
+									<td class="techSpecTD2">${ product.size } inch, OLED, Super Retina XDR, 2778 x 1284 Pixels</td>
 								</tr>
 								<tr class="techSpecRow">
-									<td class="techSpecTD1">Style:</td>
-									<td class="techSpecTD2">Apparel,Sports</td>
+									<td class="techSpecTD1">Màu sắc:</td>
+									<td class="techSpecTD2">${ product.name_color }</td>
 								</tr>
 								<tr class="techSpecRow">
-									<td class="techSpecTD1">Season:</td>
-									<td class="techSpecTD2">spring/summer</td>
+									<td class="techSpecTD1">Camera sau:</td>
+									<td class="techSpecTD2">12.0 MP + 12.0 MP + 12.0 MP</td>
 								</tr>
 								<tr class="techSpecRow">
-									<td class="techSpecTD1">Usage:</td>
-									<td class="techSpecTD2">fitness</td>
+									<td class="techSpecTD1">Camera Selfie:</td>
+									<td class="techSpecTD2">12.0 MP</td>
 								</tr>
 								<tr class="techSpecRow">
-									<td class="techSpecTD1">Sport:</td>
-									<td class="techSpecTD2">122855031</td>
+									<td class="techSpecTD1">RAM:</td>
+									<td class="techSpecTD2">6 GB</td>
 								</tr>
 								<tr class="techSpecRow">
-									<td class="techSpecTD1">Brand:</td>
-									<td class="techSpecTD2">Shock Absorber</td>
+									<td class="techSpecTD1">Bộ nhớ trong:</td>
+									<td class="techSpecTD2">${ product.name_capacity } GB</td>
+								</tr>
+								<tr class="techSpecRow">
+									<td class="techSpecTD1">CPU:</td>
+									<td class="techSpecTD2">Apple A15 Bionic</td>
+								</tr>
+								<tr class="techSpecRow">
+									<td class="techSpecTD1">Dung lượng pin:</td>
+									<td class="techSpecTD2">4352 mAh</td>
+								</tr>
+								<tr class="techSpecRow">
+									<td class="techSpecTD1">Hệ điều hành:</td>
+									<td class="techSpecTD2">iOS 15</td>
 								</tr>
 							</tbody>
 						</table>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p>
-						<p>Raw denim you probably haven't heard of them jean shorts
-							Austin. Nesciunt tofu stumptown aliqua, retro synth master
-							cleanse. Mustache cliche tempor, williamsburg carles vegan
-							helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
-							synth. Cosby sweater eu banh mi, qui irure terry richardson ex
-							squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
-							cardigan american apparel, butcher voluptate nisi qui.</p> --%>
-
+						<p>${ product.details }</p>
+						
 					</div>
 					<div class="tab-pane fade " id="profile">
 					
@@ -218,9 +172,9 @@ Body Section
 									<h3><fmt:formatNumber type="number" groupingUsed="true" value="${ item.price }" /> ₫</h3>
 									
 									<div class="btn-group">
-										<a href="product_details.html" class="defaultBtn"><span
-											class=" icon-shopping-cart"></span> Add to cart</a> <a
-											href="product_details.html" class="shopBtn">VIEW</a>
+										<a href="<c:url value="/AddCart/${ item.id }"/>" class="defaultBtn"><span
+											class=" icon-shopping-cart"></span> Thêm vào giỏ hàng</a></br> </br><a
+											href="/AppleShop/chi-tiet-san-pham/${ item.id }" class="shopBtn">Xem chi tiết</a>
 									</div>
 								</form>
 							</div>

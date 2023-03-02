@@ -51,8 +51,15 @@ public class BillsServiceImpl implements IBillsService {
 	public List<BillDetail> findById(int id)  {
 		return billsDao.findById(id);
 	}
+	@Override
+	public Bills findBillById(int id){
+		return billsDao.findBillById(id);
+	}
 	
-
+	@Override
+	public void update(Bills bill){
+		 billsDao.update(bill);
+	}
 	
 	
 	

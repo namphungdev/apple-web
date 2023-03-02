@@ -12,8 +12,10 @@
         <div class="page-wrapper">
            
             <div class="container-fluid">
-			<a href="<c:url value="/home_admin/category_list" />">Danh sách loại sản phẩm</a> <br />
-			<h1>Chỉnh sửa loại sản phẩm:</h1>
+            <h1>Chỉnh sửa loại sản phẩm:</h1>
+			<button type="button" class="btn btn-primary"><a style="color: #fff" href="<c:url value="/home_admin/category_list" />">Danh sách loại sản phẩm</a></button>
+			</br>
+			</br>
 			<c:url value="/home_admin/updateCategory" var="updateCategory" />
 			<form:form action="${updateCategory}" method="POST"
 				modelAttribute="category">

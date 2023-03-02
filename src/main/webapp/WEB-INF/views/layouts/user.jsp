@@ -52,7 +52,7 @@
 						Trang chủ
 					</a>
 					<c:if test="${not empty LoginInfo}">
-						<a href="<c:url value="account"/>"><span class="icon-user"></span> ${LoginInfo.display_name}</a>
+						<a href="<c:url value="/account"/>"><span class="icon-user"></span> ${LoginInfo.display_name}</a>
 						<a href="<c:url value="/dang-xuat"/>"><span class="icon-edit"></span>
 							Đăng xuất </a>
 					</c:if>
@@ -74,17 +74,21 @@
 	<!--
 Lower Header Section 
 -->
+<jsp:include page="/WEB-INF/views/layouts/user/header.jsp"></jsp:include>
+	
+	
 	<div class="container">
 		<div id="gototop"></div>
+		<decorator:body></decorator:body>
+	</div>	
+
 		
 
-		<jsp:include page="/WEB-INF/views/layouts/user/header.jsp"></jsp:include>
-
-		<decorator:body></decorator:body>
+		
 
 		<jsp:include page="/WEB-INF/views/layouts/user/footer.jsp"></jsp:include>
 
-	</div>
+	
 	<!-- /container -->
 
 	<div class="copyright">
@@ -96,7 +100,7 @@ Lower Header Section
 					href="#"><img src="<c:url value="/assets/user/img/visa.png" />" alt="payment"></a> <a
 					href="#"><img src="<c:url value="/assets/user/img/disc.png" />" alt="payment"></a>
 			</p>
-			<span>Copyright &copy; 2022<br> By Phung Tran Thanh Nam with love "<3"
+			<span>Copyright &copy; 2022<br> By Thành Nam with love "<3"
 			</span>
 		</div>
 	</div>
